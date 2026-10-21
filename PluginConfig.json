@@ -1,0 +1,12 @@
+{
+  "name": "Stock Quote",
+  "desc": "Lasso a stock ticker to view and optionally insert an online quote",
+  "iconPath": "/icon.png",
+  "versionName": "0.1.13",
+  "versionCode": "14",
+  "pluginID": "sq7m2k9v4x8p1c6d",
+  "pluginKey": "StockQuote",
+  "jsMainPath": "index",
+  "uses-permissions": ["plugin.permission.INTERNET"],
+  "nativeCodePackage": "/app.npk"
+}
