@@ -4,7 +4,7 @@ A handwritten stock-ticker recognition and quote lookup plugin for Supernote.
 
 This plugin lets you write a ticker symbol in a Supernote note, lasso it, and open a market quote without leaving the note. You can view the quote in a clean popup and optionally insert the quote information into the note.
 
-![Stock Quote plugin on Supernote](screenshots/stock-quote.png)
+![Stock Quote plugin on Supernote](screenshots/stock-quote.jpg)
 
 ## Features
 
@@ -19,12 +19,14 @@ This plugin lets you write a ticker symbol in a Supernote note, lasso it, and op
 
 ## Installation
 
-1. Download the latest `.snplg` file from the repository's **Releases** folder or GitHub Releases page.
-2. Copy the `.snplg` file to your Supernote device using the same method you normally use for installing Supernote plugins.
-3. Install the plugin on the Supernote.
+1. Download the latest `.snplg` file from the repository's **Releases** area when available.
+2. Copy the `.snplg` file to your Supernote using your normal Supernote plugin installation method.
+3. Install the plugin.
 4. Open a note and use the lasso tool. **Stock Quote** should appear as a lasso action.
 
-The plugin needs Internet access to retrieve quote data. The first time it needs network access, Supernote may ask you to allow the plugin's Internet permission.
+The plugin needs Internet access to retrieve quote data. Supernote may ask you to allow the plugin's Internet permission.
+
+Developers can also build from the source in this repository using the included React Native project and `buildPlugin.sh`.
 
 ## How to Use
 
@@ -34,11 +36,11 @@ The plugin needs Internet access to retrieve quote data. The first time it needs
 4. The recognized ticker appears in the popup and the current quote is retrieved.
 5. Tap **Insert Quote** to place the quote into your note, or tap **Dismiss** to close the popup without changing the note.
 
-If handwriting recognition is imperfect, you can correct the ticker in the text field and tap **Quote** again.
+If handwriting recognition is imperfect, correct the ticker and try the quote lookup again.
 
 ## Supernote Corner Method
 
-On some A5X configurations, Supernote reports a 1404 × 1872 display/page while lasso strokes use the newer EMR coordinate range (approximately `maxX=20967`, `maxY=15725`). Passing the reported display size directly to `recognizeElements()` can cause OCR to fail for handwriting near the lower corners.
+On some A5X configurations, Supernote reports a 1404 × 1872 display/page while lasso strokes use the newer EMR coordinate range, approximately `maxX=20967` and `maxY=15725`. Passing the reported display size directly to `recognizeElements()` can cause OCR to fail for handwriting near the lower corners.
 
 This plugin detects that wider EMR range and tries a 1920 × 2560 recognition coordinate space first. This workaround is referred to in this project as the **Supernote Corner Method**.
 
@@ -56,7 +58,9 @@ The source is included in this repository. The project uses React Native and `sn
 
 ## Status
 
-The plugin is working and usable, but it remains a community project. Bug reports and improvements are welcome.
+Version 0.1.13 is the first cleaned public release after testing handwriting recognition, online quote retrieval, insertion, persistent action buttons, and lower-corner recognition.
+
+Feedback and bug reports are welcome.
 
 ## Author
 
